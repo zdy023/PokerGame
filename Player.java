@@ -12,7 +12,7 @@ public abstract class Player extends JFrame
 	protected Socket socket;
 	protected ObjectOutputStream oos;
 	protected ObjectInputStream ois;
-	protected int[] myCards;
+	protected ArrayList<Integer> myCards;
 	protected abstract void check(ArrayList<Integer> cards);
 	protected Player(String hostIP)
 	{
@@ -28,5 +28,5 @@ public abstract class Player extends JFrame
 			this.reflect(command);
 		}
 	}
-	protected void reflect(String command);
+	protected abstract void reflect(String command);
 }

@@ -12,12 +12,18 @@ import java.util.ArrayList;
 import java.util.Random;
 public abstract class PokerGame extends ServerSocket implements Game
 {
-	protected ArrayList<Socket> sockets;
 	protected final Card[] cards;
+	protected ArrayList<Socket> sockets;
 	protected ArrayList<ObjectOutputStream> oos;
 	protected ArrayList<ObjectInputStream> ois;
 	protected int playerCount;
 	protected boolean continueOrNot;
+	protected PokerGame()
+	{
+		sockets = new ArrayList<Socket>();
+		oos = new ArrayList<Socket>();
+		ois = new ArrayList<Socket>();
+	}
 	protected abstract int[][] divideCards(int[] cards);
 	protected int[] randomSequence(int n)
 	{
@@ -51,8 +57,17 @@ public abstract class PokerGame extends ServerSocket implements Game
 			{
 				oos.get(i).writeUTF("cards");
 				oos.get(i).writeObject(userCards[i]);
+				oos.get(i).flush();
 			}
 			this.fight();
+			for(int j = 0;j<playerCount;j++)
+			{
+				oos.get(j).writeUTF("continue");
+				continueOrNot = ois.get(j).readBoolean()&&continueOrNot;
+			}
+			String nextGame = continueOrNot?"goon":"finish";
+			for(int j = 0;j<playerCount;j++)
+				oos.get(j).writeUTF(nextGame);
 		}
 	}
 	public abstract void fight();
