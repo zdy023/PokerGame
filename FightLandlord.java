@@ -5,6 +5,7 @@ import java.net.Socket();
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Arrays;
+import java.util.Random;
 public class FightLandlord extends PokerGame
 {
 	private int rate,lordIndex;
