@@ -6,14 +6,15 @@ import java.io.BufferedInputStream;
 import java.io.ObjectInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ObjectOutputStream;
+import java.awt.event.ActionEvent;
 public abstract class Player extends JFrame
 {
 	protected final Card[] cards;
 	protected Socket socket;
 	protected ObjectOutputStream oos;
 	protected ObjectInputStream ois;
-	protected ArrayList<Integer> myCards;
-	protected abstract void check(ArrayList<Integer> cards);
+	protected ArrayList<Integer>[] userCards;
+	protected abstract boolean check(ArrayList<Integer>[] cards);
 	protected Player(String hostIP)
 	{
 		socket = new Socket(hostIP,3000);
@@ -29,4 +30,5 @@ public abstract class Player extends JFrame
 		}
 	}
 	protected abstract void reflect(String command);
+	public abstract void sendOut(ActionEvent e);
 }
