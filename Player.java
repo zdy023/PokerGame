@@ -1,4 +1,4 @@
-package xyz.davidChangx.game;
+package xyz.davidchangx.game;
 import java.util.ArrayList;
 import java.net.Socket;
 import javax.swing.JFrame;

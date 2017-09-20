@@ -1,8 +1,8 @@
-package xyz.davidChangx.game;
-import xyz.davidChangx.game.Game;
+package xyz.davidchangx.game;
+import xyz.davidchangx.game.Game;
 import java.net.ServerSocket;
-//import xyz.davidChangx.game.Player;
-import xyz.davidChangx.game.Card;
+//import xyz.davidchangx.game.Player;
+import xyz.davidchangx.game.Card;
 import java.net.Socket;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;

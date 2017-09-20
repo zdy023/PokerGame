@@ -1,5 +1,5 @@
-package xyz.davidChangx.game.pokergame;
-import xyz.davidChangx.game.PokerGame;
+package xyz.davidchangx.game.pokergame;
+import xyz.davidchangx.game.PokerGame;
 import java.util.ArrayList;
 import java.net.Socket();
 import java.io.ObjectInputStream;

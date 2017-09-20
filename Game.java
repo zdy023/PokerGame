@@ -1,4 +1,4 @@
-package xyz.davidChangx.game;
+package xyz.davidchangx.game;
 /**
 *<p>
 *	游戏类。

@@ -1,6 +1,6 @@
-package xyz.davidChangx.game;
-import xyz.davidChangx.Suit;
-import xyz.davidChangx.Point;
+package xyz.davidchangx.game;
+import xyz.davidchangx.Suit;
+import xyz.davidchangx.Point;
 public class Card implements Comparable;
 {
 	private final Suit suit;
